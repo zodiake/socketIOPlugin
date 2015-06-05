@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="org.zodiake.SocketIOPlugin" version="1.0.0">
+    <name>SocketIOPlugin</name>
+    <description>Stupid SocketIOPlugin</description>
+    <author>zodiake</author>
+    <keywords>SocketIOPlugin</keywords>
+    <license>MIT</license>
+    <js-module src="www/socketIOPlugin.js" name="SocketIOPlugin">
+        <clobbers target="cordova.plugins.socketio" />
+    </js-module>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SocketIOPlugin">
+                <param name="android-package" value="com.zodiake.app.SocketIOPlugin" />
+            </feature>
+        </config-file>
+        <!---->
+        <source-file src="src/SocketIOPlugin.java" target-dir="src/com/zodiake/socketplugin" />
+    </platform>
+</plugin>
